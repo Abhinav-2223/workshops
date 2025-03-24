@@ -2,4 +2,4 @@
 
 Workshops for NTUHPC.
 
-- [Accelerating ML Workflows with Aspire2A](./accelerate_ml_aspire2a)
+- [Accelerating ML Workflows with Aspire2A](./ml_aspire2a)
