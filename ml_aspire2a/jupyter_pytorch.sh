@@ -8,7 +8,7 @@
 #PBS -q normal
 
 ### Request for compute resources
-#PBS -l select=1:ncpus=2:ngpus=1:mem=16gb
+#PBS -l select=1:ncpus=2:ngpus=1:mem=32gb
 
 ### Request for 2hr of runtime
 #PBS -l walltime=2:00:00
@@ -34,7 +34,8 @@ PORT=$(shuf -i8000-8999 -n1)
 # Start Pytouch container running JupyterLab
 echo "JupyterLab will listen on: `hostname`:$PORT"
 # --nv Provides access to GPUs
-singularity exec --nv  /app/apps/containers/pytorch/pytorch-nvidia-22.04-py3.sif \
+singularity exec --nv  \
+  /app/apps/containers/pytorch/pytorch-nvidia-22.04-py3.sif \
   jupyter-lab --no-browser --ip=0.0.0.0 --port=$PORT
 
 # redirect command block stderr & output to separate log file
