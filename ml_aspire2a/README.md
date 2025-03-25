@@ -152,7 +152,7 @@ running JupyterLab on one of the compute nodes by submitting a PBS Job Script.
    qstat
    ```
 
-For more information on the PBS Job system, take a look at the [Aspire2A Advanced Job Management Guide}(https://help.nscc.sg/wp-content/uploads/ASPIRE2A-ADVANCED-JOB-MANAGEMENT-TRAINING_GUIDE.pdf)
+For more information on the PBS Job system, take a look at the [Aspire2A Advanced Job Management Guide](https://help.nscc.sg/wp-content/uploads/ASPIRE2A-ADVANCED-JOB-MANAGEMENT-TRAINING_GUIDE.pdf)
 
 ## Connecting to Your JupyterLab
 
