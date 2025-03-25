@@ -1,15 +1,17 @@
 #!/bin/bash
 ### PBS Directives
+
 ### Specify name for job
 #PBS -N jupyterlab
 
 ### Submit to normal queue
 #PBS -q normal
-### TODO: add GPU
+
 ### Request for compute resources
-#PBS -l select=1:ncpus=1:mem=16gb
+#PBS -l select=1:ncpus=2:ngpus=1:mem=16gb
+
 ### Request for 2hr of runtime
-#PBS -l walltime=1:00:00
+#PBS -l walltime=2:00:00
 
 ### Bill to personal project
 #PBS -P personal
