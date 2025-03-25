@@ -79,7 +79,7 @@ Check the SUs available in your projects by running:
 myprojects
 ```
 
-For more information, take a look at the [Aspire2A Introdutory PPT](https://help.nscc.sg/wp-content/uploads/ASPIRE2A-INTRODUCTORY-WORKSHOP-THEORY-GUIDE.pdf)
+For more information, take a look at the [Aspire2A Introductory PPT](https://help.nscc.sg/wp-content/uploads/ASPIRE2A-INTRODUCTORY-WORKSHOP-THEORY-GUIDE.pdf)
 
 # Running Jobs on Aspire2A
 
@@ -151,6 +151,8 @@ running JupyterLab on one of the compute nodes by submitting a PBS Job Script.
    ```sh
    qstat
    ```
+
+For more information on the PBS Job system, take a look at the [Aspire2A Advanced Job Management Guide}(https://help.nscc.sg/wp-content/uploads/ASPIRE2A-ADVANCED-JOB-MANAGEMENT-TRAINING_GUIDE.pdf)
 
 ## Connecting to Your JupyterLab
 
