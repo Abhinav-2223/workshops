@@ -25,16 +25,13 @@
 cd $PBS_O_WORKDIR || exit $?
 
 {
-# load the singularity container runtime
-module load singularity
-
 # Generate a random port number for jupyterlab from 8000-8999 to listen on to avoid clashes with other users
 PORT=$(shuf -i8000-8999 -n1)
 
 # Start Pytouch container running JupyterLab
 echo "JupyterLab will listen on: `hostname`:$PORT"
 # --nv Provides access to GPUs
-singularity exec --nv  \
+/app/apps/singularity/3.10.0/bin/singularity exec --nv  \
   /app/apps/containers/pytorch/pytorch-nvidia-22.04-py3.sif \
   jupyter-lab --no-browser --ip=0.0.0.0 --port=$PORT
 
