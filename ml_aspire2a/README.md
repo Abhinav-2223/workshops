@@ -198,7 +198,8 @@ Inspect the job log to obtain essential information about your JupyterLab instan
 
 ### SSH Local Port Forwarding
 
-SSH Local Port Forwarding allows you to securely access JupyterLab running on the Compute Node from your local machine’s browser. The following sections explain how to set up port forwarding on Windows (using PuTTY) and MacOS/Linux (using Terminal).
+SSH Local Port Forwarding allows you to securely access JupyterLab running on the Compute Node from your local machine’s browser. 
+The following sections explain how to set up port forwarding on Windows (using PuTTY) and MacOS/Linux (using Terminal).
 
 #### Windows (Using PuTTY)
 
@@ -247,12 +248,17 @@ For MacOS and Linux users, here’s how to set up **SSH Local Port Forwarding** 
      - Replace `<HOSTNAME>:<PORT>` with the hostname & port number where JupyterLab is running (from your job log).
    - **`<USERNAME>@aspire2a.nscc.sg`**: Replace `<USERNAME>` with your Aspire2A username.
 
-### Access JupyterLab
+### Run ML Workflow
 
-Once the SSH connection is established and port forwarding is active, open your web browser and go to:
+Finally, we are ready to run our ML workflow (Jupyter Notebook) on Aspire2A:
 
-```
-http://localhost:8888/?token=<TOKEN>
-```
+1. **Access JupyterLab** Once the SSH connection is established and port forwarding is active, open your web browser and go to:
 
-- Replace `<TOKEN>` with the token from the job log.
+    ```
+    http://localhost:8888/?token=<TOKEN>
+    ```
+
+    - Replace `<TOKEN>` with the token from the job log.
+
+
+2. Download the `ml.ipynb` Jupyter Notebook [here](
