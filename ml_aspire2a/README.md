@@ -152,7 +152,6 @@ running JupyterLab on one of the compute nodes by submitting a PBS Job Script.
    qstat
    ```
 
-
 ## Connecting to Your JupyterLab
 
 To connect to the JupyterLab, we must use SSH Local Port Forwarding as Compute Nodes are not directly connected to the NTU network.
@@ -197,9 +196,6 @@ Inspect the job log to obtain essential information about your JupyterLab instan
      This line shows the **JupyterLab URL** along with the **token** (`<TOKEN>`). The token is used for authentication to access the JupyterLab interface.
 
 ### SSH Local Port Forwarding
-
-SSH Local Port Forwarding allows you to securely access JupyterLab running on the Compute Node from your local machine’s browser. 
-The following sections explain how to set up port forwarding on Windows (using PuTTY) and MacOS/Linux (using Terminal).
 
 #### Windows (Using PuTTY)
 
@@ -248,17 +244,53 @@ For MacOS and Linux users, here’s how to set up **SSH Local Port Forwarding** 
      - Replace `<HOSTNAME>:<PORT>` with the hostname & port number where JupyterLab is running (from your job log).
    - **`<USERNAME>@aspire2a.nscc.sg`**: Replace `<USERNAME>` with your Aspire2A username.
 
-### Run ML Workflow
+## **Fine-Tuning YOLO on Aspire2A**
 
-Finally, we are ready to run our ML workflow (Jupyter Notebook) on Aspire2A:
+To run the machine learning workflow on Aspire2A, follow these steps:
 
-1. **Access JupyterLab** Once the SSH connection is established and port forwarding is active, open your web browser and go to:
+1. **Access JupyterLab**
 
-    ```
-    http://localhost:8888/?token=<TOKEN>
-    ```
+   - Once the SSH connection is established and port forwarding is active, open your web browser and navigate to:
+     ```
+     http://localhost:8888/?token=<TOKEN>
+     ```
+   - Replace `<TOKEN>` with the token from the job log.
 
-    - Replace `<TOKEN>` with the token from the job log.
+2. **Download the Jupyter Notebook**
 
+   - Download the `ml.ipynb` Jupyter Notebook from the following link:  
+     [ml.ipynb](https://github.com/mrzzy/ntuhpc-workshops/blob/main/ml_aspire2a/ml.ipynb)
 
-2. Download the `ml.ipynb` Jupyter Notebook [here](
+3. **Upload the Notebook to Aspire2A**
+
+   - Upload `ml.ipynb` to Aspire2A using JupyterLab.
+   - Refer to this [guide](https://jupyterlab.readthedocs.io/en/stable/user/files.html#uploading-and-downloading) for detailed instructions.
+
+4. **Run the Notebook to Fine-Tune the YOLO Model**
+   - Open `ml.ipynb` in JupyterLab.
+   - Run each cell sequentially to fine-tune the YOLO model to the Rock-Paper-Scissors dataset.
+
+## **Running the Model on a Webcam**
+
+Now for the fun part—let’s run inference using OpenCV’s webcam feed on the `rps_model.pt` we trained.
+
+1. **Download the Inference Script**
+
+   - Download [cv.py](https://github.com/mrzzy/ntuhpc-workshops/blob/main/ml_aspire2a/cv.py).
+   - Place it in the same directory as `rps_model.pt`.
+
+2. **Install Dependencies**
+
+   - Ensure the required dependencies are installed in your Python environment:
+     ```sh
+     pip install ultralytics==8.3.96
+     ```
+   - Use `pip3` instead of `pip` if necessary.
+
+3. **Run the Inference Script**
+   - Execute `cv.py` to perform live inference using the YOLO model:
+     ```sh
+     python cv.py rps_model.pt
+     ```
+   - This will open the webcam, run real-time object detection, and display the results.
+   - Press **'q'** to exit.
