@@ -35,7 +35,7 @@ echo "JupyterLab will listen on: `hostname`:$PORT"
 singularity exec --nv  /app/apps/containers/pytorch/pytorch-nvidia-22.04-py3.sif \
   jupyter-lab --no-browser --ip=0.0.0.0 --port=$PORT
 
-# redirect command block stderr & output to seperate log file
+# redirect command block stderr & output to separate log file
 # we cant use the default PBS job log file as it only delivered when the job exits, 
 # and we need jupyterlab's output to access jupyterlab running in the container.
 }  >> ${PBS_JOBNAME}.${PBS_JOBID}.log 2>&1
