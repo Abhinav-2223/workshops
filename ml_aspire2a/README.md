@@ -12,7 +12,12 @@ To access Aspire2A we first register a NSCC user account, then connect to Aspire
 
 To access Aspire2A, follow these steps to set up your NSCC user account:
 
-1. Ensure you are NTU network: connected on `NTUSecure` or via [VPN](https://vpngate-student.ntu.edu.sg/global-protect/getsoftwarepage.esp)
+1. Ensure you are on the NTU network (ie. connected on `NTUSecure`):
+
+    > Outside of NTU? You must first connect to the NTU network [VPN](https://vpngate-student.ntu.edu.sg/global-protect/getsoftwarepage.esp)
+    > and then connect to [Aspire2A via Jumphost (NTU Intranet Page)](https://entuedu.sharepoint.com/teams/ntuhpcusersgroup2/SitePages/Using-NTU-JumpHost-to-NSCC-ASPIRE-2A.aspx).
+    > Exactly how to do this is left as an exercise for the reader.
+
 2. Going to [NSCC Users Page](https://user.nscc.sg/saml/) to register for Aspire2A access.
 3. Set a password for your user account by [Following the NSCC Entrollment guide](https://help.nscc.sg/wp-content/uploads/2024/05/NSCC-UserEnrollmentGuide-v0.1.pdf)
 
@@ -247,42 +252,48 @@ For MacOS and Linux users, here’s how to set up **SSH Local Port Forwarding** 
    - **`<USERNAME>@aspire2a.nscc.sg`**: Replace `<USERNAME>` with your Aspire2A username.
 
 ### Accessing JupyterLab
+
 Once the SSH connection is established and port forwarding is active, open your web browser and navigate to:
+
 ```
 http://localhost:8888/?token=<TOKEN>
 ```
-- Replace `<TOKEN>` with the token from the job log.
 
+- Replace `<TOKEN>` with the token from the job log.
 
 ## **Downloading the Dataset**
 
 Follow these steps to download the Rock-Paper-Scissors dataset:
 
 1. **Create a Roboflow Account:**
+
    - Visit [Roboflow](https://roboflow.com).
    - Click on **"Sign Up"** in the top right corner.
    - Fill in the required information (email, password, etc.) or sign up using Google or GitHub.
    - Complete the signup process and verify your email if needed.
 
 2. **Navigate to the Dataset:**
+
    - Go to the following [Dataset URL](https://universe.roboflow.com/roboflow-58fyf/rock-paper-scissors-sxsw/dataset/14/download/yolov11).
    - This will take you directly to the dataset page for the "Rock Paper Scissors" dataset.
 
 3. **Select YOLOV11 Format & Download zip to computer:**
+
    - Once the download prompt appears, select **"YOLOV11 format"** from the available formats.
    - Select the option labeled **"Download zip to computer**.
 
 4. **Click on "Download":**
+
    - On the page, look for the **"Download"** button and click it to begin the download process.
 
 5. **Upload to Aspire2A**
-    - Upload the dataset `roboflow.zip` to Aspire2A using JupyterLab.
+   - Upload the dataset `roboflow.zip` to Aspire2A using JupyterLab.
    - Refer to this [guide](https://jupyterlab.readthedocs.io/en/stable/user/files.html#uploading-and-downloading) for detailed instructions.
-
 
 ## **Fine-Tuning YOLO on Aspire2A**
 
 To run the machine learning workflow on Aspire2A, follow these steps:
+
 1. **Download the Jupyter Notebook**
 
    - Download the `ml.ipynb` Jupyter Notebook from the following link:  
