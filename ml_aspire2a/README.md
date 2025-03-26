@@ -14,9 +14,9 @@ To access Aspire2A, follow these steps to set up your NSCC user account:
 
 1. Ensure you are on the NTU network (ie. connected on `NTUSecure`):
 
-    > Outside of NTU? You must first connect to the NTU network [VPN](https://vpngate-student.ntu.edu.sg/global-protect/getsoftwarepage.esp)
-    > and then connect to [Aspire2A via Jumphost (NTU Intranet Page)](https://entuedu.sharepoint.com/teams/ntuhpcusersgroup2/SitePages/Using-NTU-JumpHost-to-NSCC-ASPIRE-2A.aspx).
-    > Exactly how to do this is left as an exercise for the reader.
+   > Outside of NTU? You must first connect to the NTU network [VPN](https://vpngate-student.ntu.edu.sg/global-protect/getsoftwarepage.esp)
+   > and then connect to [Aspire2A via Jumphost (NTU Intranet Page)](https://entuedu.sharepoint.com/teams/ntuhpcusersgroup2/SitePages/Using-NTU-JumpHost-to-NSCC-ASPIRE-2A.aspx).
+   > Exactly how to do this is left as an exercise for the reader.
 
 2. Going to [NSCC Users Page](https://user.nscc.sg/saml/) to register for Aspire2A access.
 3. Set a password for your user account by [Following the NSCC Entrollment guide](https://help.nscc.sg/wp-content/uploads/2024/05/NSCC-UserEnrollmentGuide-v0.1.pdf)
@@ -287,7 +287,8 @@ Follow these steps to download the Rock-Paper-Scissors dataset:
    - On the page, look for the **"Download"** button and click it to begin the download process.
 
 5. **Upload to Aspire2A**
-   - Upload the dataset `roboflow.zip` to Aspire2A using JupyterLab.
+ 
+   - Upload the dataset `rock-paper-scissors.v14i.yolov11.zip` to Aspire2A using JupyterLab.
    - Refer to this [guide](https://jupyterlab.readthedocs.io/en/stable/user/files.html#uploading-and-downloading) for detailed instructions.
 
 ## **Fine-Tuning YOLO on Aspire2A**
