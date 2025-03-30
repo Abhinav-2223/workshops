@@ -57,7 +57,7 @@ Connect to Aspire2A via `ssh`
 2. **Run SSH Command**
 
    ```sh
-   ssh <USERNAME>@aspire2a.nscc.sg
+   ssh <USERNAME>@aspire2antu.nscc.sg
    ```
 
    - Replace `<USERNAME>` with your Aspire2A username.
