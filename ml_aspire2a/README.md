@@ -38,7 +38,7 @@ Connect to Aspire2A using PuTTY:
 2. **Configure PuTTY**
 
    - Open _PuTTY_ and enter:
-     - **Host Name**: `<USERNAME>@aspire2a.nscc.sg`
+     - **Host Name**: `<USERNAME>@aspire2antu.nscc.sg`
        - Replace `USERNAME` with your Aspire2A username.
      - **Port**: `22`
      - **Connection Type**: `SSH`
