@@ -215,8 +215,8 @@ Follow these steps to set up SSH Local Port Forwarding using **PuTTY** on Window
 
    - In the **PuTTY Configuration** window, under **Session**:
 
-     - **Host Name (or IP address)**: `<USERNAME>@aspire2a.nscc.sg`
-       - **`<USERNAME>@aspire2a.nscc.sg`**: Replace `<USERNAME>` with your Aspire2A username.
+     - **Host Name (or IP address)**: `<USERNAME>@aspire2antu.nscc.sg`
+       - **`<USERNAME>@aspire2antu.nscc.sg`**: Replace `<USERNAME>` with your Aspire2A username.
      - **Port**: `22`
      - **Connection Type**: `SSH`
 
@@ -244,12 +244,12 @@ For MacOS and Linux users, here’s how to set up **SSH Local Port Forwarding** 
    Use the following command to establish an SSH connection and forward the local port `8888` to the remote compute node's port where JupyterLab is running:
 
    ```sh
-   ssh -L 8888:localhost:<PORT> <USERNAME>@aspire2a.nscc.sg
+   ssh -L 8888:<HOSTNAME>:<PORT> <USERNAME>@aspire2antu.nscc.sg
    ```
 
    - **`-L 8888:<HOSTNAME>:<PORT>`** `-L` configures Local Port Forwarding.
      - Replace `<HOSTNAME>:<PORT>` with the hostname & port number where JupyterLab is running (from your job log).
-   - **`<USERNAME>@aspire2a.nscc.sg`**: Replace `<USERNAME>` with your Aspire2A username.
+   - **`<USERNAME>@aspire2antu.nscc.sg`**: Replace `<USERNAME>` with your Aspire2A username.
 
 ### Accessing JupyterLab
 
