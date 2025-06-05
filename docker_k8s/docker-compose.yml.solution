@@ -1,0 +1,52 @@
+#
+# Docker Workshop
+# Chat App
+# Docker Compose
+#
+
+services:
+  mongodb:
+    # since no build context is specified, this service will download the image directly
+    # from the Docker Hub registry
+    image: mongodb/mongodb-community-server:8.0.9-ubi9
+    # configure the mongoDB container's root user credentials
+    # environment variables from .env are referenced here
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
+    volumes:
+      # mount a named volume to persist the database data
+      - mongodb:/data/db
+
+  backend:
+    # tag the backend image with this tag when built
+    image: ghcr.io/mrzzy/chat-backend:latest
+    # configure the backend service to connect to the mongodb service
+    environment:
+      MONGO_URL: mongodb://${MONGO_USERNAME}:${MONGO_PASSWORD}@mongodb:27017?authSource=admin
+    # build the 'backend/' directory
+    build: backend
+    # expose the backend on port 3001
+    ports:
+      - "3001:3001"
+    # restart the backend service unless it is stopped manually
+    # this is needed as the backend might start before mongodb is ready and crash initially
+    restart: unless-stopped
+
+  frontend:
+    # tag the frontend image with this tag when built
+    image: ghcr.io/mrzzy/chat-frontend:latest
+    # build the 'frontend/' directory
+    build: 
+      context: frontend
+      dockerfile: Dockerfile
+      args:
+        # set the backend URL for the frontend to connect to
+        NEXT_PUBLIC_BACKEND_URL: http://localhost:3001
+    # expose the frontend on port 3000
+    ports:
+      - "3000:3000"
+
+volumes:
+  # create a named volume for the mongodb data
+  mongodb:

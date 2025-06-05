@@ -1,0 +1,11 @@
+# ml_aspire2a workshop
+ml_aspire2a/rps_model.pt
+ml_aspire2a/roboflow.zip
+
+# python
+.ipynb_checkpoints/
+venv/
+.venv/
+
+# dotenv files
+.env
